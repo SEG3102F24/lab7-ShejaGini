@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Search for Authors</h2>
+
+  <div class="mb-3">
+    <label for="authorId" class="form-label">Author ID:</label>
+    <input
+      type="text"
+      id="authorId"
+      class="form-control"
+      [(ngModel)]="authorId"
+      placeholder="Enter author ID"
+    />
+  </div>
+
+  <button class="btn btn-primary" (click)="submit()">Search</button>
+
+  <div *ngIf="showMessage" class="alert alert-danger mt-3">
+    {{ message }}
+  </div>
+</div>

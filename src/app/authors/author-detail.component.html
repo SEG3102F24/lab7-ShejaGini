@@ -1,0 +1,31 @@
+<div *ngIf="!selectedAuthor" class="alert alert-warning">
+  Sorry, can't find the requested author...
+</div>
+
+<div *ngIf="selectedAuthor" class="container">
+  <h2>Author Details</h2>
+
+  <div class="row mb-3">
+    <div class="col-3">ID:</div>
+    <div class="col-9">{{ selectedAuthor.id }}</div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">First Name:</div>
+    <div class="col-9">{{ selectedAuthor.firstName }}</div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">Last Name:</div>
+    <div class="col-9">{{ selectedAuthor.lastName }}</div>
+  </div>
+
+  <div class="row mb-3" *ngIf="selectedAuthor.books?.length">
+    <div class="col-3">Books:</div>
+    <div class="col-9">
+      <ul class="list-unstyled">
+        <li *ngFor="let book of selectedAuthor.books">{{ book.title }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
